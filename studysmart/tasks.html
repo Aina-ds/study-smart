@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Tasks - StudySmart</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Navigation Bar - consistent across all pages -->
+    <nav class="navbar">
+        <div class="logo">Study<span>Smart</span></div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="tasks.html">Tasks</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="pages/profile.html">Profile</a></li>
+            <li><a href="pages/login.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Header with Add Task button -->
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h1>Study Tasks</h1>
+            <!-- Button that opens modal dialog for adding new tasks -->
+            <button class="btn btn-primary" onclick="document.getElementById('taskModal').style.display='flex'">+ Add
+                New Task</button>
+        </div>
+
+        <!-- MODAL DIALOG: Popup form for creating new tasks -->
+        <!-- Initially hidden (display: none), shown when Add Task button is clicked -->
+        <div id="taskModal"
+            style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); align-items: center; justify-content: center; z-index: 1000;">
+            <!-- Modal content container -->
+            <div style="background: white; padding: 2rem; border-radius: 12px; width: 90%; max-width: 500px;">
+                <h3>Create New Study Task</h3>
+                <form>
+                    <!-- Task Name Input -->
+                    <div class="form-group">
+                        <label>Task Name</label>
+                        <input type="text" placeholder="e.g., Complete Web Tech Assignment" required>
+                    </div>
+
+                    <!-- Deadline Date Picker -->
+                    <div class="form-group">
+                        <label>Deadline</label>
+                        <input type="date" required> <!-- date input provides calendar picker -->
+                    </div>
+
+                    <!-- Priority Dropdown Selection -->
+                    <div class="form-group">
+                        <label>Priority Level</label>
+                        <select>
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option> <!-- Default selected option -->
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+
+                    <!-- Modal action buttons -->
+                    <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+                        <!-- Cancel button - closes modal without saving -->
+                        <button type="button" class="btn"
+                            onclick="document.getElementById('taskModal').style.display='none'">Cancel</button>
+                        <!-- Submit button - would save task (backend implementation needed) -->
+                        <button type="submit" class="btn btn-primary">Create Task</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Task List Card-->
+        <div class="card">
+            <h3>My Task List</h3>
+
+            <!-- Individual Task Item - High Priority Example -->
+            <div class="task-item">
+                <div>
+                    <strong>Web Technoligies Project</strong><br>
+                    <small>Due: March 30, 2026</small> <!-- Deadline information -->
+                </div>
+                <div>
+                    <!-- Priority badge with high priority styling -->
+                    <span class="task-priority priority-high">High</span>
+                    <!-- Complete button - marks task as completed -->
+                    <button class="btn btn-success" style="margin-left: 0.5rem;">Complete</button>
+                    <!-- Delete button - removes task -->
+                    <button class="btn btn-danger" style="margin-left: 0.5rem;">🗑️</button>
+                </div>
+            </div>
+
+            <!-- Individual Task Item - Medium Priority Example -->
+            <div class="task-item">
+                <div>
+                    <strong>Database Design Assignment</strong><br>
+                    <small>Due: April 5, 2026</small>
+                </div>
+                <div>
+                    <span class="task-priority priority-medium">Medium</span>
+                    <button class="btn btn-success" style="margin-left: 0.5rem;">Complete</button>
+                    <button class="btn btn-danger" style="margin-left: 0.5rem;">🗑️</button>
+                </div>
+            </div>
+
+            <!-- Individual Task Item - Low Priority Example -->
+            <div class="task-item">
+                <div>
+                    <strong>Read Chapter 6: JavaScript</strong><br>
+                    <small>Due: April 10, 2026</small>
+                </div>
+                <div>
+                    <span class="task-priority priority-low">Low</span>
+                    <button class="btn btn-success" style="margin-left: 0.5rem;">Complete</button>
+                    <button class="btn btn-danger" style="margin-left: 0.5rem;">🗑️</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Task Statistics Card - Shows progress metrics -->
+        <div class="card">
+            <h3>Task Statistics</h3>
+            <div style="margin-top: 1rem;">
+                <p>Total Tasks: 8</p>
+                <p>Completed: 3</p>
+                <p>Pending: 5</p>
+                <!-- Progress bar showing completion rate (3/8 = 37.5%) -->
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 37.5%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 StudySmart. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

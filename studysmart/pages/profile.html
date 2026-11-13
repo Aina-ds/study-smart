@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - StudySmart</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar - Standard user navigation -->
+    <nav class="navbar">
+        <div class="logo">Study<span>Smart</span></div>
+        <ul class="nav-links">
+            <li><a href="../dashboard.html">Dashboard</a></li>
+            <li><a href="../tasks.html">Tasks</a></li>
+            <li><a href="../schedule.html">Schedule</a></li>
+            <li><a href="profile.html">Profile</a></li>  <!-- Current page -->
+            <li><a href="login.html">Logout</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <!-- Two column layout for Personal Info and Statistics -->
+        <div class="dashboard-grid">
+            <!-- Personal Information Card - Editable user details -->
+            <div class="card">
+                <h3>Personal Information</h3>
+                <form>
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" value="Aina Azhar">  <!-- Pre-filled with user data -->
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" value="aina@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" value="+92 XXX XXXXXXX">
+                    </div>
+                    <button class="btn btn-primary">Update Profile</button>
+                </form>
+            </div>
+            
+            <!-- Study Statistics Card - Shows user's academic progress -->
+            <div class="card">
+                <h3>Study Statistics</h3>
+                <p>Total Study Hours: 127 hrs</p>  <!-- Cumulative study time -->
+                <p>Tasks Completed: 45</p>  <!-- Total completed tasks -->
+                <p>Current Streak: 12 days</p>  <!-- Consecutive study days -->
+                <p>Joined: January 2024</p>  <!-- Account creation date -->
+            </div>
+        </div>
+        
+        <!-- Change Password Card - Security feature -->
+        <div class="card">
+            <h3>Change Password</h3>
+            <!-- Password change form - Meets security requirements from SRS -->
+            <form style="max-width: 400px;">
+                <div class="form-group">
+                    <label>Current Password</label>
+                    <input type="password">  <!-- Verify old password -->
+                </div>
+                <div class="form-group">
+                    <label>New Password</label>
+                    <input type="password">  <!-- New password input -->
+                </div>
+                <div class="form-group">
+                    <label>Confirm New Password</label>
+                    <input type="password">  <!-- Confirm new password -->
+                </div>
+                <button class="btn btn-primary">Change Password</button>
+                <!-- Note: Passwords will be hashed using bcrypt before storage (SRS 6.2) -->
+            </form>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <p>&copy; 2024 StudySmart. All rights reserved.</p>
+    </footer>
+</body>
+</html>

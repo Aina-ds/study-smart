@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Schedule - StudySmart</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Page-specific styles for schedule table -->
+    <style>
+        /*Styling for the schedule table */
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        /* Table header and cell borders */
+        .schedule-table th,
+        .schedule-table td {
+            border: 1px solid #ddd;
+            /* Light border around cells */
+            padding: 12px;
+            text-align: left;
+        }
+
+        /* Table header styling - blue background */
+        .schedule-table th {
+            background-color: #3498db;
+            color: white;
+        }
+
+        /* Time slot column styling */
+        .time-slot {
+            background-color: #f8f9fa;
+            /*Light gray background */
+            font-weight: bold;
+        }
+
+        /* Task slot styling - subtle green background for study tasks */
+        .task-slot {
+            background-color: #e8f5e9;
+        }
+
+        /* Margin for generate button */
+        .generate-btn {
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Study<span>Smart</span></div>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="tasks.html">Tasks</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="pages/profile.html">Profile</a></li>
+            <li><a href="pages/login.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Header with Generate Schedule button -->
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h1>Smart Study Schedule</h1>
+            <!-- Button triggers schedule generation algorithm (alert for demo) -->
+            <button class="btn btn-primary generate-btn"
+                onclick="alert('Generating optimized schedule based on your priorities...')">Generate New
+                Schedule</button>
+        </div>
+
+        <!-- Today's Schedule Card -->
+        <div class="card">
+            <h3>Today's Schedule - March 26, 2026</h3>
+
+            <!-- Schedule Table - Displays tasks organized by time slots -->
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Time</th> <!-- Time column header -->
+                        <th>Task</th> <!-- Task name column -->
+                        <th>Priority</th> <!-- Priority level column -->
+                        <th>Status</th> <!-- Action column -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Task 1: High Priority - Morning Session -->
+                    <tr>
+                        <td class="time-slot">9:00 AM - 11:00 AM</td>
+                        <td>Web Technologies Project</td>
+                        <td><span class="task-priority priority-high">High</span></td>
+                        <td><button class="btn btn-success btn-sm">Start</button></td>
+                    </tr>
+
+                    <!-- Task 2: Medium Priority - Late Morning Session -->
+                    <tr>
+                        <td class="time-slot">11:30 AM - 1:00 PM</td>
+                        <td>Database Design Assignment</td>
+                        <td><span class="task-priority priority-medium">Medium</span></td>
+                        <td><button class="btn btn-success btn-sm">Start</button></td>
+                    </tr>
+
+                    <!-- Task 3: Medium Priority - Afternoon Session -->
+                    <tr>
+                        <td class="time-slot">2:00 PM - 3:30 PM</td>
+                        <td>JavaScript Practice</td>
+                        <td><span class="task-priority priority-medium">Medium</span></td>
+                        <td><button class="btn btn-success btn-sm">Start</button></td>
+                    </tr>
+
+                    <!-- Task 4: Low Priority - Late Afternoon Session -->
+                    <tr>
+                        <td class="time-slot">4:00 PM - 5:00 PM</td>
+                        <td>Read Chapter 5</td>
+                        <td><span class="task-priority priority-low">Low</span></td>
+                        <td><button class="btn btn-success btn-sm">Start</button></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Two column layout for Weekly Overview and Priority Planning -->
+        <div class="dashboard-grid">
+            <!-- Weekly Overview Card-->
+            <div class="card">
+                <h3>Weekly Overview</h3>
+                <div style="margin-top: 1rem;">
+                    <!-- Daily study hour breakdown -->
+                    <p><strong>Monday:</strong> 4 hours (Web Tech + DB)</p>
+                    <p><strong>Tuesday:</strong> 3 hours (JavaScript + Reading)</p>
+                    <p><strong>Wednesday:</strong> 5 hours (Project + Quiz Prep)</p>
+                    <p><strong>Thursday:</strong> 3 hours (Lab Report)</p>
+                    <p><strong>Friday:</strong> 4 hours (Review + Practice)</p>
+                    <p><strong>Weekend:</strong> Free for catch-up</p>
+                </div>
+            </div>
+
+            <!-- Priority-Based Planning Card -->
+            <div class="card">
+                <h3>Priority-Based Planning</h3>
+                <!-- High Priority Progress - 80% scheduled -->
+                <div class="progress-bar" style="margin-top: 1rem;">
+                    <div class="progress-fill" style="width: 80%; background-color: #e74c3c;"></div>
+                    <!-- Red fill for high priority -->
+                    <div>
+                        <p>High Priority: 80% scheduled</p>
+
+                        <!-- Medium Priority Progress - 60% scheduled -->
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 60%; background-color: #f39c12;"></div>
+                            <!-- Orange fill for medium priority -->
+                        </div>
+                        <p>Medium Priority: 60% scheduled</p>
+
+                        <!-- Low Priority Progress - 40% scheduled -->
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 40%; background-color: #27ae60;"></div>
+                            <!-- Green fill for low priority -->
+                        </div>
+                        <p>Low Priority: 40% scheduled</p>
+
+                        <!-- Note: According to SRS, schedules prioritize tasks with earlier deadlines -->
+                        <p style="margin-top: 1rem; font-size: 0.85rem; color: #666;">
+                            Tasks with earlier deadlines are prioritized in the schedule
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <p>&copy; 2024 StudySmart. All rights reserved.</p>
+            </footer>
+</body>
+
+</html>

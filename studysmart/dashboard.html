@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - StudySmart</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Navigation Bar - appears on all main pages -->
+    <nav class="navbar">
+        <div class="logo">Study<span>Smart</span></div> <!-- Brand logo -->
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li> <!-- Current page link -->
+            <li><a href="tasks.html">Tasks</a></li> <!-- Link to task management -->
+            <li><a href="schedule.html">Schedule</a></li> <!-- Link to smart schedule -->
+            <li><a href="pages/profile.html">Profile</a></li> <!-- User profile -->
+            <li><a href="pages/login.html">Logout</a></li> <!-- Logout link -->
+        </ul>
+    </nav>
+
+    <!-- Main content container -->
+    <div class="container">
+        <!-- Page header section -->
+        <h1>Productivity Dashboard</h1>
+        <p>Track your study progress and stay motivated!</p>
+
+        <!-- Statistics cards grid - shows key metrics -->
+        <div class="dashboard-grid">
+            <!-- Total Tasks Card -->
+            <div class="stat-card">
+                <div class="stat-number">8</div> <!-- Large number for emphasis -->
+                <div>Total Tasks</div>
+            </div>
+
+            <!-- Completed Tasks Card - custom gradient -->
+            <div class="stat-card" style="background: linear-gradient(135deg, #f39c12, #e67e22);">
+                <div class="stat-number">5</div>
+                <div>Completed Tasks</div>
+            </div>
+
+            <!-- Study Hours Card - custom gradient -->
+            <div class="stat-card" style="background: linear-gradient(135deg, #27ae60, #2ecc71);">
+                <div class="stat-number">24</div>
+                <div>Study Hours</div>
+            </div>
+        </div>
+
+        <!-- Weekly Progress Card -->
+        <div class="card">
+            <h3>Weekly Progress</h3>
+            <!-- Progress bar showing 62% completion -->
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 62%;"></div> <!-- width determines progress percentage -->
+            </div>
+            <p>62% of weekly goals completed</p>
+        </div>
+
+        <!-- Two column layout for recent tasks and deadlines -->
+        <div class="dashboard-grid">
+            <!-- Recent Completed Tasks Card -->
+            <div class="card">
+                <h3>Recent Completed Tasks</h3>
+                <ul style="margin-top: 1rem;">
+                    <li>Web Technoligies Assignment</li>
+                    <li>Database Quiz Preparation</li>
+                    <li>Reading Chapter 5</li>
+                </ul>
+            </div>
+
+            <!-- Upcoming Deadlines Card -->
+            <div class="card">
+                <h3>Upcoming Deadlines</h3>
+                <ul style="margin-top: 1rem;">
+                    <li>Project Proposal - Due in 2 days</li>
+                    <li>Math Exam - Due in 5 days</li>
+                    <li>Lab Report - Due in 1 week</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer - appears on all pages -->
+    <footer class="footer">
+        <p>&copy; 2026 StudySmart. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

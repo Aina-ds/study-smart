@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - StudySmart</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Admin Navigation Bar - distinct with "Admin" label -->
+    <nav class="navbar">
+        <div class="logo">Study<span>Smart</span> <span style="font-size: 0.8rem;">Admin</span></div>
+        <ul class="nav-links">
+            <li><a href="admin.html">Dashboard</a></li> <!-- Admin dashboard -->
+            <li><a href="#">Users</a></li> <!-- User management (to be implemented) -->
+            <li><a href="#">Tasks Overview</a></li> <!-- Task statistics -->
+            <li><a href="#">System Logs</a></li> <!-- System activity logs -->
+            <li><a href="dashboard.html">Exit Admin</a></li> <!-- Exit admin mode -->
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Admin Dashboard</h1>
+        <p>Manage users, monitor system activity, and ensure data integrity.</p>
+
+        <!-- Admin Statistics Cards - Shows system-wide metrics -->
+        <div class="dashboard-grid">
+            <!-- Total Users Card -->
+            <div class="stat-card" style="background: linear-gradient(135deg, #2c3e50, #3498db);">
+                <div class="stat-number">124</div>
+                <div>Total Users</div>
+            </div>
+
+            <!-- Total Tasks Card -->
+            <div class="stat-card" style="background: linear-gradient(135deg, #27ae60, #2ecc71);">
+                <div class="stat-number">892</div>
+                <div>Total Tasks</div>
+            </div>
+
+            <!-- System Uptime Card - Meeting 99% uptime target from SRS -->
+            <div class="stat-card" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">
+                <div class="stat-number">98%</div>
+                <div>System Uptime</div> <!-- SRS requirement: 99% uptime target -->
+            </div>
+        </div>
+
+        <!-- User Management Card - FR-A1: View All Users -->
+        <div class="card">
+            <h3>User Management</h3>
+            <!-- Table displaying all registered students (FR-A1)-->
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th> <!-- User ID -->
+                        <th>Name</th> <!-- Student name -->
+                        <th>Email</th> <!-- Contact email -->
+                        <th>Status</th> <!-- Account status (Active/Inactive) -->
+                        <th>Actions</th> <!-- Management actions (FR-A2) -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Active User Example -->
+                    <tr>
+                        <td>1</td>
+                        <td>Aina Azhar</td>
+                        <td>aina@example.com</td>
+                        <td><span style="color: #27ae60;">Active</span></td> <!-- Green for active -->
+                        <td>
+                            <button class="btn btn-danger btn-sm">Deactivate</button> <!-- Deactivate account -->
+                        </td>
+                    </tr>
+
+                    <!-- Active User Example -->
+                    <tr>
+                        <td>2</td>
+                        <td>Zohaib Mukhtar</td>
+                        <td>zohaib@example.com</td>
+                        <td><span style="color: #27ae60;">Active</span></td>
+                        <td>
+                            <button class="btn btn-danger btn-sm">Deactivate</button>
+                        </td>
+                    </tr>
+
+                    <!-- Inactive User Example - Shows account that can be activated -->
+                    <tr>
+                        <td>3</td>
+                        <td>Sarah Ahmed</td>
+                        <td>sarah@example.com</td>
+                        <td><span style="color: #e74c3c;">Inactive</span></td> <!-- Red for inactive -->
+                        <td>
+                            <button class="btn btn-success btn-sm">Activate</button> <!-- Activate account -->
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Two column layout for System Stats and Database Management -->
+        <div class="dashboard-grid">
+            <!-- System Statistics Card - FR-A3: Monitor System Activity -->
+            <div class="card">
+                <h3>System Statistics</h3>
+                <p>Active Users: 98</p> <!-- Currently active user count -->
+                <p>Tasks Completed Today: 156</p> <!-- Daily task completion metric -->
+                <p>Average Study Hours: 3.2 hrs/day</p> <!-- Average study time -->
+                <p>Most Active Time: 8:00 PM - 10:00 PM</p> <!-- Peak usage hours -->
+            </div>
+
+            <!-- Database Management Card - FR-A4: Database Maintenance -->
+            <div class="card">
+                <h3>Database Management</h3>
+                <!-- Backup buttons for data integrity -->
+                <button class="btn btn-primary">Backup Database</button> <!-- Manual backup trigger -->
+                <button class="btn" style="margin-left: 1rem;">Restore Backup</button> <!-- Restore from backup -->
+                <p style="margin-top: 1rem; font-size: 0.85rem; color: #666;">
+                    Last Backup: March 25, 2024 10:30 PM <!-- Shows last backup timestamp -->
+                </p>
+
+                <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #666;">
+                    Daily backups scheduled for data protection <!-- SRS requirement: Daily backups -->
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 StudySmart Admin Panel</p>
+    </footer>
+</body>
+
+</html>

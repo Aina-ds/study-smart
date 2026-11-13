@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"> <!--Specifies character encoding for proper text display-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Ensures proper scaling on mobile devices-->
+    <title>Login - StudySmart</title> <!-- Page title shown in browser tab -->
+    <link rel="stylesheet" href="../css/style.css"> <!--Link to external CSS file-->
+
+    <!-- Page-specific styles - only applies to login page -->
+    <style>
+        /* Full-page gradient background container */
+        .login-container {
+            min-height: 100vh;
+            /* Takes full viewport height */
+            display: flex;
+            /* Flexbox for centering */
+            align-items: center;
+            /* Vertically center */
+            justify-content: center;
+            /* Horizontally center */
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            /* Purple gradient background */
+        }
+
+        /* White card containing login form */
+        .login-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 400px;
+            /* Limits width on large screens */
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            /*Deeper shadow for floating effect */
+        }
+
+        /* Center align heading */
+        .login-card h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        /* Center logo in login card */
+        .login-card .logo {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /*Styling for register link */
+        .register-link {
+            text-align: center;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login-card">
+            <!-- Logo display - StudySmart brand -->
+            <div class="logo">Study<span>Smart</span></div>
+            <h2>Welcome Back!</h2>
+
+            <!--Login form - action points to dashboard.html (will be replaced with backend later)-->
+
+            <form action="../dashboard.html">
+                <!-- Email input field -->
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="Enter your email" required> <!-- 'require' makes field mandatory-->
+                </div>
+
+                <!-- Password input field -->
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="Enter your password" required>
+                    <!-- type="password" hides characters -->
+                </div>
+
+                <!-- Submit button - full width -->
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+            </form>
+
+            <!-- Link to registration page -->
+            <div class="register-link">
+                <a href="register.html">Don't have an account? Register</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

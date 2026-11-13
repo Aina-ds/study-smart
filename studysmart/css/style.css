@@ -1,0 +1,361 @@
+/* STUDYSMART - MAIN STYLESHEET
+Author: Aina Azhar & Zohaib Mukhtar
+Description: Complete styling for StudySmart Intelligent Study Planner */
+
+/* RESET & BASE STYLES
+Universal selector - removes default margins/padding from all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Includes padding/border in element's total width/height */
+}
+
+/* Body Styling - applies to entire page */
+body {
+    font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Modern, readable font stack */
+    background-color: #f5f7fa;
+    color: #333;
+    /* Dark Grey text for good contrast */
+    line-height: 1.6;
+    /* Improves readability by increasing line spacing */
+}
+
+/* NAVIGATION BAR COMPONENT 
+Main navigation bar - fixed at top of every page */
+.navbar {
+    background-color: #2c3e50;
+    /* Dark blue-grey background */
+    color: white;
+    /* white text */
+    padding: 1rem 2rem;
+    /* Top/bottom: 1rem, Left/right: 2rem */
+    display: flex;
+    /* Flexbox for horizontal layout */
+    justify-content: space-between;
+    /* Space between logo and nav links */
+    align-items: center;
+    /* Vertically center items */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+}
+
+/* Logo/brand styling */
+.logo {
+    font-size: 1.5rem;
+    /* Larger font for brand emphasis */
+    font-weight: bold;
+    /* Bold text */
+}
+
+/* Highlight "Smart" part of logo with blue color */
+.logo span {
+    color: #3498db;
+}
+
+/* Navigation links container - unordered list */
+.nav-links {
+    display: flex;
+    /* Horizontal layout */
+    list-style: none;
+    /* Remove bullet points */
+    gap: 2rem;
+    /* Space between each link */
+}
+
+/* Individual navigation links */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    /* Remove underline */
+    transition: color 0.3s;
+    /* Smooth color transition on hover */
+}
+
+/* Hover effect for navigation links */
+.nav-links a:hover {
+    color: #3498db;
+    /* Changes to blue on hover */
+}
+
+/* MAIN CONTAINER */
+/* Container centers content and adds consistent padding */
+.container {
+    max-width: 1200px;
+    /* Maximum width for large screens */
+    margin: 2rem auto;
+    /* Centers horizontally with top/bottom margin */
+    padding: 0 2rem;
+    /* Left/right padding for smaller screens */
+}
+
+/* CARD COMPONENT */
+/* Cards are used to group related content with shadow and rounded corners */
+.card {
+    background: white;
+    border-radius: 12px;
+    /* Rounded Corners */
+    padding: 1.5rem;
+    /* Inner spacing */
+    margin-bottom: 1.5rem;
+    /* Space between cards */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    /*Light shadow for depth */
+    transition: transform 0.2s, box-shadow 0.2s;
+    /* Smooth animation on hover */
+}
+
+/* Hover effect for cards - lifts card slightly */
+.card:hover {
+    transform: translateY(-3px);
+    /* Moves card up 3 pixels */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Darker shadow for emphasis */
+}
+
+/* BUTTON COMPONENTS */
+/* Base button styling */
+.btn {
+    padding: 0.6rem 1.2rem;
+    /* Top/bottom: 0.6rem, Left/right: 1.2rem */
+    border: none;
+    /* Remove default border */
+    border-radius: 6px;
+    /* Slightly rounded corners */
+    cursor: pointer;
+    /* Changes cursor to hand on hover */
+    font-size: 0.9rem;
+    /* Standard font size */
+    transition: all 0.3s;
+    /* Smooth transition for all properties */
+}
+
+/* Primary button - used for main actions */
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    /* Darker blue on hover */
+}
+
+/* Danger button - used for destructive actions (delete, deactivate) */
+.btn-danger {
+    background-color: #e74c3c;
+    /* Red Background */
+    color: white;
+}
+
+/* Success button - used for positive actions (complete, activate) */
+.btn-success {
+    background-color: #27ae60;
+    color: white;
+}
+
+/* FORM COMPONENTS */
+/* Form group - wraps label and input together */
+.form-group {
+    margin-bottom: 1rem;
+    /* Space between form fields */
+}
+
+/* Label styling for form inputs */
+.form-group label {
+    display: block;
+    /* Makes label take full width */
+    margin-bottom: 0.5rem;
+    /* Space between label and input */
+    font-weight: 500;
+    /* Semi-bold text */
+}
+
+/* Input field styling */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    /* Full width of container */
+    padding: 0.75rem;
+    /* Inner spacing for comfortable typing */
+    border: 1px solid #ddd;
+    /* Light grey border */
+    border-radius: 6px;
+    /* Rounded Corners */
+    font-size: 1rem;
+    /*Standard*/
+}
+
+/* DASHBOARD GRID LAYOUT */
+/* Responsive grid for dashboard cards */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /*Auto-responsive columns */
+    gap: 1.5rem;
+    /* Space between grid items */
+    margin-top: 1.5rem;
+    /* Space above grid */
+}
+
+/* STATISTIC CARDS */
+/* Gradient background cards for statistics display */
+.stat-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* Purple gradient */
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* Large numbers in statistics cards */
+.stat-number {
+    font-size: 2.5rem;
+    /* Large font for emphasis */
+    font-weight: bold;
+}
+
+/* TASK LIST COMPONENT */
+/* Individual task item in task list */
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    /* Space between task info and actions */
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    /* Separator line between tasks */
+}
+
+/* Priority badge styling */
+.task-priority {
+    padding: 0.25rem 0.75rem;
+    /* Small padding for badge */
+    border-radius: 20px;
+    /* Pill shape */
+    font-size: 0.75rem;
+    /* Smaller font */
+    font-weight: bold;
+}
+
+/* High priority - red theme */
+.priority-high {
+    background-color: #fee2e2;
+    /* Light red background */
+    color: #e74c3c;
+    /* Dark red text */
+}
+
+/* Medium Priority - orange theme */
+.priority-medium {
+    background-color: #fff3e0;
+    /* Light orange background */
+    color: #f39c12;
+    /* Dark orange text */
+}
+
+/* Low priority - green theme */
+.priority-low {
+    background-color: #e8f5e9;
+    /* Light green background */
+    color: #27ae60;
+    /* Dark green text */
+}
+
+/* PROGRESS BAR COMPONENT */
+/* Container for progress bar */
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    /* Thin height for minimal design */
+    background-color: #e0e0e0;
+    /* Light gray background */
+    border-radius: 5px;
+    /* Rounded corners */
+    overflow: hidden;
+    /* Hides overflow to fill bar */
+    margin: 1rem 0;
+    /* Top and bottom margin */
+}
+
+/* Fill partition of progress bar */
+.progress-fill {
+    height: 100%;
+    background-color: #27ae60;
+    /* Green fill */
+    transition: width 0.3s;
+    /* Smooth animation when width changes */
+}
+
+/* TABLE COMPONENTS */
+/* Data table for admin panel and lists */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    /* Removes double borders */
+}
+
+/* Table header and cell styling */
+.data-table th,
+.data-table td {
+    padding: 0.75rem;
+    /* Cell padding */
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    /* Bottom border only for minimal look */
+}
+
+/* Table header specific styling */
+.data-table th {
+    background-color: #f8f9fa;
+    /* Light gray backgound */
+    font-weight: 600;
+    /* Bold text */
+}
+
+/* RESPONSIVE DESIGN */
+/* Media query for tablets and mobile devices */
+@media (max-width: 768px) {
+
+    /* Stack navigation vertically on mobile */
+    .navbar {
+        flex-direction: column;
+        /* Vertical layout */
+        gap: 1rem;
+        /* Space between logo and links */
+    }
+
+    /* Wrap navigation links */
+    .nav-links {
+        flex-wrap: wrap;
+        /* Allow wrapping to new line */
+        justify-content: center;
+        /* Center links */
+        gap: 1rem;
+    }
+
+    /* Single column grid on mobile */
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        /* One column layout */
+    }
+
+    /* Reduce container padding on mobile */
+    .container {
+        padding: 0 1rem;
+    }
+}
+
+/* FOOTER STYLES */
+.footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #2c3e50;
+    /*Matches navbar color */
+    color: white;
+    margin-top: 3rem;
+    /* Space above footer */
+}
